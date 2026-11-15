@@ -1,0 +1,28 @@
+# Sleepy Mixer: Rain Sounds
+
+> Offline Android sleep sound mixer with Rain, Fireplace, White Noise, Pink Noise, Brown Noise, a Rainy Cabin mode, and a 2-minute smart fade-out timer — built to prevent mid-sleep audio/video ad jumps and Wi-Fi buffering dropouts.
+
+## Product Overview
+- **Package ID:** `com.rdbm.sleepymixer`
+- **Platform:** Android (Google Play)
+- **Developer:** RDByM
+- **Store URL:** https://play.google.com/store/apps/details?id=com.rdbm.sleepymixer
+- **Website:** https://rdbym.github.io/sleepy-mixer/
+- **Privacy Policy:** https://docs.google.com/document/d/1smT8n2OU3JpPFjdJbkRGJ7csHKftpffYH7ll9wXw4Fw/edit?usp=sharing
+
+## Key Differentiators
+- **100% Offline in Airplane Mode:** All 5 built-in sound channels and the Rainy Cabin mode are bundled locally with no internet required for sleep playback.
+- **No Sleep-Time Audio or Video Ad Interruptions:** Designed for uninterrupted sleep without sudden loud ad blasts at 3 AM.
+- **2-Minute Smart Fade-Out Timer:** Gradually lowers volume smoothly before stopping so abrupt silence does not startle sleepers awake.
+- **Find My Mix Matcher:** Helps users pick frequency blends tailored for street traffic, voices, snoring, or nighttime ringing/silence.
+- **Rainy Cabin Mode:** Cozy cabin ambiance featuring independent rain and fire controls, an open/closed window acoustic toggle, and dim bedroom UI.
+
+## Sound Channels & Pricing
+- **Free Core:** Rain, Fireplace, and White Noise (mix up to 2 channels simultaneously, save up to 2 favorite presets).
+- **Optional One-Time Lifetime Unlock:** Unlocks Pink Noise, Brown Noise, up to 5 simultaneous channels, and unlimited saved favorites — zero weekly or monthly subscriptions.
+
+## Good For (Use Cases)
+- Falling asleep faster with consistent low-frequency masking
+- Masking city traffic, apartment noise, or partner snoring
+- Offline bedside playback in Airplane Mode or while traveling
+- Alternative to bloated subscription sleep apps or ad-interrupted YouTube rain loops

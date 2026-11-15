@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sleepy Mixer: Rain Sounds — 100% Offline Sleep Sound Mixer for Android</title>
+  <meta name="description" content="Fall asleep without mid-sleep video ads or Wi-Fi dropouts. Mix offline Rain, Fireplace, White Noise, Pink Noise &amp; Brown Noise with a 2-minute smart fade-out sleep timer on Android." />
+  <link rel="canonical" href="https://rdbym.github.io/sleepy-mixer/" />
+  <link rel="icon" type="image/png" href="./assets/icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sleepy Mixer: Rain Sounds — Offline Sleep Sound Mixer" />
+  <meta property="og:description" content="Layer offline Rain, Fireplace, White, Pink &amp; Brown Noise with independent sliders and a 2-minute smart fade-out timer. 100% offline in Airplane Mode, zero sleep-time audio/video ad interruptions." />
+  <meta property="og:url" content="https://rdbym.github.io/sleepy-mixer/" />
+  <meta property="og:image" content="https://rdbym.github.io/sleepy-mixer/assets/og-preview.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sleepy Mixer: Rain Sounds — Offline Sleep Mixer" />
+  <meta name="twitter:description" content="No midnight ad blasts. 100% offline rain &amp; noise mixer with 2-minute fade-out for Android." />
+  <meta name="twitter:image" content="https://rdbym.github.io/sleepy-mixer/assets/og-preview.jpg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MobileApplication",
+        "name": "Sleepy Mixer: Rain Sounds",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Android",
+        "inLanguage": ["en", "tr"],
+        "url": "https://rdbym.github.io/sleepy-mixer/",
+        "installUrl": "https://play.google.com/store/apps/details?id=com.rdbm.sleepymixer",
+        "image": "https://rdbym.github.io/sleepy-mixer/assets/icon.png",
+        "publisher": {
+          "@type": "Organization",
+          "name": "RDByM",
+          "url": "https://github.com/RDByM"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Free core (Rain, Fireplace, White Noise, up to 2 simultaneous channels & 2 saved favorites). Optional one-time lifetime unlock for Pink Noise, Brown Noise & up to 5 channels—zero weekly subscriptions."
+        },
+        "featureList": [
+          "5 bundled offline audio channels (Rain, Fireplace, White Noise, Pink Noise, Brown Noise)",
+          "Independent volume sliders per sound layer",
+          "Find My Mix guided matcher for street noise, voices, snoring, or silence",
+          "Rainy Cabin scene with open/closed window acoustic toggle and dim lighting",
+          "2-minute gradual fade-out sleep timer",
+          "100% offline playback in Airplane Mode",
+          "No audio or video ad interruptions while sleeping"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does Sleepy Mixer work 100% offline in Airplane Mode?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. All built-in sleep audio recordings (Rain, Fireplace, White Noise, Pink Noise, and Brown Noise, plus the Rainy Cabin mode) are bundled locally on your device so playback works in Airplane Mode without Wi-Fi or mobile data."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will loud video or audio ads wake me up while sleeping?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Sleepy Mixer is designed around uninterrupted rest and never plays audio or video ad interruptions during sleep playback."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Sleepy Mixer require a weekly or monthly subscription?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No recurring weekly subscription is required. The core mixer (Rain, Fireplace, White Noise, 2 simultaneous channels, and 2 saved favorites) is free, with an optional one-time lifetime unlock for Pink Noise, Brown Noise, and up to 5 simultaneous layers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Uygulama uçak modunda internet olmadan çalışır mı ve uykuda reklam çıkar mı?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Evet, tüm dahili uyku sesleri cihazınızda yerel olarak bulunur ve uçak modunda %100 çevrimdışı çalışır. Uyku dinlemesi sırasında sesli veya videolu reklam kesintisi yaşanmaz."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #070b14;
+      --bg-glow: #13203d;
+      --card: #11192c;
+      --card-2: #16223b;
+      --border: #243456;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --dim: #94a3b8;
+      --accent: #38bdf8;
+      --accent-dark: #06101f;
+      --ok: #34d399;
+      --warn: #fb7185;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Plus Jakarta Sans", sans-serif;
+      background: radial-gradient(circle at 50% -10%, var(--bg-glow) 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    a { color: var(--accent); }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 24px 20px 64px; }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0 28px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    .brand img {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .lang-switch {
+      display: inline-flex;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .lang-btn {
+      border: 0;
+      background: transparent;
+      color: var(--dim);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .lang-btn.active {
+      background: var(--accent);
+      color: var(--accent-dark);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.35fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+      background: linear-gradient(145deg, rgba(22, 34, 59, 0.85), rgba(11, 17, 30, 0.95));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 32px;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.14);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+    h1 {
+      font-size: clamp(1.85rem, 3.6vw, 2.75rem);
+      line-height: 1.18;
+      margin: 16px 0 14px;
+      letter-spacing: -0.02em;
+    }
+    p.lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      margin: 0 0 22px;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: var(--accent-dark);
+      font-weight: 700;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 12px;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+    .cta:hover { transform: translateY(-1px); opacity: 0.95; }
+    .cta-sub {
+      color: var(--dim);
+      font-size: 0.88rem;
+    }
+    .hero-visual {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .hero-visual img {
+      display: block;
+      width: 100%;
+      max-height: 360px;
+      object-fit: cover;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+    }
+    .card h3 { margin: 8px 0 10px; font-size: 1.12rem; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.96rem; }
+    .tag-problem { color: var(--warn); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; }
+    .tag-solution { color: var(--ok); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; }
+
+    .channels {
+      margin-top: 34px;
+      background: var(--card-2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 26px;
+    }
+    .channels h2 { margin: 0 0 8px; font-size: 1.38rem; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .pill {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 0.92rem;
+    }
+    .pill strong { color: var(--text); }
+    .pill span { color: var(--dim); font-size: 0.82rem; margin-left: 6px; }
+
+    section.faq { margin-top: 40px; }
+    section.faq h2 { font-size: 1.45rem; margin-bottom: 16px; }
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+    }
+    .faq-item h3 { margin: 0 0 6px; font-size: 1.02rem; color: var(--text); }
+    .faq-item p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+      color: var(--dim);
+      font-size: 0.88rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    footer .links { display: flex; flex-wrap: wrap; gap: 16px; }
+
+    [data-lang="tr"] { display: none; }
+    body.tr [data-lang="en"] { display: none; }
+    body.tr [data-lang="tr"] { display: block; }
+    body.tr .inline-tr { display: inline; }
+    body.tr .inline-en { display: none; }
+    .inline-tr { display: none; }
+
+    @media (max-width: 780px) {
+      .hero { grid-template-columns: 1fr; padding: 24px; }
+      .hero-visual img { max-height: 260px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="topbar">
+      <a class="brand" href="./">
+        <img src="./assets/icon.png" alt="Sleepy Mixer app icon" />
+        <span>Sleepy Mixer: Rain Sounds</span>
+      </a>
+      <div class="lang-switch" role="group" aria-label="Language switch">
+        <button id="btn-en" class="lang-btn active" type="button" onclick="setLang('en')">EN</button>
+        <button id="btn-tr" class="lang-btn" type="button" onclick="setLang('tr')">TR</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <span class="badge">
+          <span class="inline-en">Android · 100% Offline · Zero Sleep Ad Interruptions</span>
+          <span class="inline-tr">Android · %100 Çevrimdışı · Uykuda Reklam Kesintisi Yok</span>
+        </span>
+
+        <div data-lang="en">
+          <h1>Still Awake at 3 AM? Mask Night Noise Without Mid-Sleep Ad Blasts.</h1>
+          <p class="lead">
+            Tired of 8-hour rain videos waking you up with sudden loud ads or buffering drops?
+            Layer <strong>Rain, Fireplace, White, Pink &amp; Brown Noise</strong> with independent sliders,
+            a cozy Rainy Cabin mode, and a <strong>2-minute smart fade-out timer</strong>—100% offline in Airplane Mode.
+          </p>
+        </div>
+
+        <div data-lang="tr">
+          <h1>Saat 03:00'te Hâlâ Uyuyamıyor musunuz? Dış Gürültüyü Çevrimdışı Maskeleyin.</h1>
+          <p class="lead">
+            Tam uykuya dalmışken video platformlarında patlayan yüksek sesli reklamlardan veya kopan yayınlardan bıktınız mı?
+            <strong>Yağmur, Şömine, Beyaz, Pembe ve Kahverengi Gürültüyü</strong> ayrı sürgülerle karıştırın;
+            <strong>Yağmurlu Kulübe</strong> modu ve <strong>2 dakikalık kademeli kapanma</strong> ile Uçak Modu'nda bile kesintisiz uyuyun.
+          </p>
+        </div>
+
+        <div class="cta-row">
+          <a class="cta" href="https://play.google.com/store/apps/details?id=com.rdbm.sleepymixer" target="_blank" rel="noopener">
+            <span class="inline-en">Get Free on Google Play</span>
+            <span class="inline-tr">Google Play'den Ücretsiz İndir</span>
+          </a>
+          <span class="cta-sub">
+            <span class="inline-en">Free core · Optional one-time unlock · No weekly subscription</span>
+            <span class="inline-tr">Temel kullanım ücretsiz · Abonelik yok</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img src="./assets/og-preview.jpg" alt="Sleepy Mixer rain and noise mixer preview" />
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Problem and Solution">
+      <article class="card">
+        <div class="tag-problem">
+          <span class="inline-en">Problem · 2 AM Ad Jumps</span>
+          <span class="inline-tr">Sorun · Gece Bölünen Uyku</span>
+        </div>
+        <div data-lang="en">
+          <h3>No Sudden Ad Volume Spikes</h3>
+          <p>Streaming platforms blast loud mid-roll ads or stall when Wi-Fi disconnects. Sleepy Mixer plays bundled local audio with zero audio or video ad interruptions while you sleep.</p>
+        </div>
+        <div data-lang="tr">
+          <h3>Tam Dalacakken Patlayan Seslere Son</h3>
+          <p>Video sitelerinde araya giren ani reklamlar ve kesilen internet uykunuzu böler. Sleepy Mixer'da uyku dinlemesi sırasında sesli veya videolu reklam kesintisi yoktur.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="tag-solution">
+          <span class="inline-en">Solution · Custom Balance</span>
+          <span class="inline-tr">Çözüm · Kişisel Karışım</span>
+        </div>
+        <div data-lang="en">
+          <h3>Find My Mix + Rainy Cabin</h3>
+          <p>Not sure which frequency masks traffic, voices, snoring, or tinnitus? Use the guided Find My Mix matcher or switch to the Rainy Cabin view with open/closed window acoustics and dim lighting.</p>
+        </div>
+        <div data-lang="tr">
+          <h3>Kişisel Karışımım &amp; Yağmurlu Kulübe</h3>
+          <p>Trafik, yan oda sesi, horlama veya kulak çınlaması için doğru frekansı 2 adımda bulun; penceresi açılıp kapanabilen loş ışıklı Yağmurlu Kulübe sahnesine geçin.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="tag-solution">
+          <span class="inline-en">Offline · Smart Timer</span>
+          <span class="inline-tr">Çevrimdışı · Akıllı Zamanlayıcı</span>
+        </div>
+        <div data-lang="en">
+          <h3>Airplane Mode &amp; 2-Min Fade-Out</h3>
+          <p>Turn on Airplane Mode at night. When your sleep timer ends, Sleepy Mixer lowers volume smoothly over the final 2 minutes instead of snapping into jarring silence.</p>
+        </div>
+        <div data-lang="tr">
+          <h3>Uçak Modu ve 2 Dk Kademeli Kapanma</h3>
+          <p>Telefonunuzu uçak moduna alın. Uyku zamanlayıcısı süre sonunda sesi aniden kesmek yerine son 2 dakikada yavaşça kısarak uyanmanızı önler.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="channels" aria-label="Sound Channels">
+      <div data-lang="en">
+        <h2>5 Bundled Offline Sound Channels</h2>
+        <p style="margin:0;color:var(--muted);">Core includes Rain, Fireplace &amp; White Noise (up to 2 active layers &amp; 2 saved favorites free). Optional one-time lifetime unlock adds Pink Noise, Brown Noise &amp; up to 5 simultaneous channels—no recurring weekly fees.</p>
+      </div>
+      <div data-lang="tr">
+        <h2>5 Yerleşik Çevrimdışı Ses Kanalı</h2>
+        <p style="margin:0;color:var(--muted);">Ücretsiz sürümde Yağmur, Şömine ve Beyaz Gürültü (aynı anda 2 kanal + 2 favori kayıt) açıktır. Tek seferlik kalıcı yükseltmeyle Pembe Gürültü, Kahverengi Gürültü ve 5 kanala kadar eşzamanlı miks açılır; haftalık abonelik yoktur.</p>
+      </div>
+      <div class="pill-row">
+        <div class="pill"><strong>🌧️ Rain</strong><span>Free core</span></div>
+        <div class="pill"><strong>🔥 Fireplace</strong><span>Free core</span></div>
+        <div class="pill"><strong>📻 White Noise</strong><span>Free core</span></div>
+        <div class="pill"><strong>🌸 Pink Noise</strong><span>One-time unlock</span></div>
+        <div class="pill"><strong>🌊 Brown Noise</strong><span>One-time unlock</span></div>
+        <div class="pill"><strong>🏡 Rainy Cabin</strong><span>Window toggle &amp; dim UI</span></div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div data-lang="en"><h2>Frequently Asked Questions</h2></div>
+      <div data-lang="tr"><h2>Sık Sorulan Sorular</h2></div>
+
+      <div class="faq-item" data-lang="en">
+        <h3>Does it really work offline in Airplane Mode?</h3>
+        <p>Yes. All bundled audio tracks live inside the app on your Android phone, so they play smoothly without Wi-Fi or mobile data.</p>
+      </div>
+      <div class="faq-item" data-lang="en">
+        <h3>Will an ad interrupt me at 3 AM?</h3>
+        <p>Never during sleep playback. There are zero audio or video ad interruptions while your sleep sounds are playing.</p>
+      </div>
+      <div class="faq-item" data-lang="en">
+        <h3>Is there a weekly subscription?</h3>
+        <p>No. Core sleep sounds are free to use, and unlocking Pink/Brown Noise and 5-channel mixes is a single optional one-time upgrade.</p>
+      </div>
+
+      <div class="faq-item" data-lang="tr">
+        <h3>Uçak modunda internet kapalıyken gerçekten çalışır mı?</h3>
+        <p>Evet. Tüm yerleşik yağmur, şömine ve gürültü kayıtları cihaz içinde paketlidir; Wi-Fi veya mobil veri olmadan çalışır.</p>
+      </div>
+      <div class="faq-item" data-lang="tr">
+        <h3>Uyurken araya reklam girer mi?</h3>
+        <p>Hayır. Uyku sesleri çalarken sesli veya videolu reklam kesintisi yaşanmaz.</p>
+      </div>
+      <div class="faq-item" data-lang="tr">
+        <h3>Haftalık veya aylık zorunlu abonelik var mı?</h3>
+        <p>Hayır. Temel mikser ücretsizdir; Pembe Gürültü, Kahverengi Gürültü ve 5 kanallı miks için yalnızca isteğe bağlı tek seferlik kalıcı açılış sunulur.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <strong>Sleepy Mixer: Rain Sounds</strong> · Package ID: <code>com.rdbm.sleepymixer</code> · Developer: RDByM
+      </div>
+      <div class="links">
+        <a href="https://play.google.com/store/apps/details?id=com.rdbm.sleepymixer" target="_blank" rel="noopener">Google Play</a>
+        <a href="https://docs.google.com/document/d/1smT8n2OU3JpPFjdJbkRGJ7csHKftpffYH7ll9wXw4Fw/edit?usp=sharing" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="./llms.txt">llms.txt</a>
+        <a href="https://github.com/RDByM" target="_blank" rel="noopener">GitHub (RDByM)</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    function setLang(lang) {
+      const isTr = lang === "tr";
+      document.body.classList.toggle("tr", isTr);
+      document.documentElement.lang = isTr ? "tr" : "en";
+      document.getElementById("btn-en").classList.toggle("active", !isTr);
+      document.getElementById("btn-tr").classList.toggle("active", isTr);
+    }
+    (function initLang() {
+      const params = new URLSearchParams(window.location.search);
+      const qLang = params.get("lang");
+      if (qLang === "tr") setLang("tr");
+      else if (qLang === "en") setLang("en");
+      else if ((navigator.language || "").toLowerCase().startsWith("tr")) setLang("tr");
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rdbym.github.io/sleepy-mixer/sitemap.xml
