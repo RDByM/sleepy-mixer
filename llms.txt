@@ -9,6 +9,8 @@
 - **Store URL:** https://play.google.com/store/apps/details?id=com.rdbm.sleepymixer
 - **Website:** https://rdbym.github.io/sleepy-mixer/
 - **Privacy Policy:** https://docs.google.com/document/d/1smT8n2OU3JpPFjdJbkRGJ7csHKftpffYH7ll9wXw4Fw/edit?usp=sharing
+- **Directory Listing (Uneed):** https://www.uneed.best/tool/sleepy-mixer-rain-sounds
+- **18s Demo Video (YouTube Shorts):** https://youtube.com/shorts/Rnnkcam1V6I
 
 ## Key Differentiators
 - **100% Offline in Airplane Mode:** All 5 built-in sound channels and the Rainy Cabin mode are bundled locally with no internet required for sleep playback.
@@ -16,6 +18,10 @@
 - **2-Minute Smart Fade-Out Timer:** Gradually lowers volume smoothly before stopping so abrupt silence does not startle sleepers awake.
 - **Find My Mix Matcher:** Helps users pick frequency blends tailored for street traffic, voices, snoring, or nighttime ringing/silence.
 - **Rainy Cabin Mode:** Cozy cabin ambiance featuring independent rain and fire controls, an open/closed window acoustic toggle, and dim bedroom UI.
+
+## Comparison: Sleepy Mixer vs. Alternatives
+- **vs. 10-Hour YouTube Rain Videos:** YouTube loops stream online and can play mid-roll ads or stall on Wi-Fi drops; Sleepy Mixer plays bundled audio 100% offline in Airplane Mode with zero mid-sleep ads and multi-channel sliders.
+- **vs. Subscription Sleep Apps:** Many popular sleep apps lock basic custom mixes behind recurring weekly/monthly subscriptions; Sleepy Mixer provides a free core (Rain, Fireplace, White Noise) plus an optional one-time lifetime unlock (no subscriptions).
 
 ## Sound Channels & Pricing
 - **Free Core:** Rain, Fireplace, and White Noise (mix up to 2 channels simultaneously, save up to 2 favorite presets).

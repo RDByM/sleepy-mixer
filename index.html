@@ -23,14 +23,20 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "MobileApplication",
+        "@type": ["MobileApplication", "SoftwareApplication"],
         "name": "Sleepy Mixer: Rain Sounds",
         "applicationCategory": "HealthApplication",
         "operatingSystem": "Android",
         "inLanguage": ["en", "tr"],
         "url": "https://rdbym.github.io/sleepy-mixer/",
         "installUrl": "https://play.google.com/store/apps/details?id=com.rdbm.sleepymixer",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=com.rdbm.sleepymixer",
         "image": "https://rdbym.github.io/sleepy-mixer/assets/icon.png",
+        "sameAs": [
+          "https://play.google.com/store/apps/details?id=com.rdbm.sleepymixer",
+          "https://www.uneed.best/tool/sleepy-mixer-rain-sounds",
+          "https://youtube.com/shorts/Rnnkcam1V6I"
+        ],
         "publisher": {
           "@type": "Organization",
           "name": "RDByM",
@@ -77,6 +83,14 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "No recurring weekly subscription is required. The core mixer (Rain, Fireplace, White Noise, 2 simultaneous channels, and 2 saved favorites) is free, with an optional one-time lifetime unlock for Pink Noise, Brown Noise, and up to 5 simultaneous layers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Sleepy Mixer compare to 10-hour YouTube rain videos or subscription sleep apps?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Unlike YouTube loops, Sleepy Mixer runs 100% offline in Airplane Mode without mid-sleep video/audio ads or buffering dropouts, includes a 2-minute gradual fade-out timer, and replaces recurring monthly or yearly subscriptions with an optional one-time lifetime unlock."
             }
           },
           {
@@ -281,6 +295,22 @@
     .faq-item h3 { margin: 0 0 6px; font-size: 1.02rem; color: var(--text); }
     .faq-item p { margin: 0; color: var(--muted); font-size: 0.95rem; }
 
+    .compare {
+      margin-top: 34px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 26px;
+      overflow-x: auto;
+    }
+    .compare h2 { margin: 0 0 6px; font-size: 1.38rem; }
+    .compare p.sub { margin: 0 0 16px; color: var(--dim); font-size: 0.92rem; }
+    table.cmp { width: 100%; border-collapse: collapse; min-width: 560px; font-size: 0.93rem; }
+    table.cmp th, table.cmp td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--border); }
+    table.cmp th { color: var(--dim); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.03em; }
+    table.cmp td.me { color: var(--ok); font-weight: 600; }
+    table.cmp tr:last-child td { border-bottom: 0; }
+
     footer {
       margin-top: 48px;
       padding-top: 22px;
@@ -327,8 +357,12 @@
           <span class="inline-tr">Android · %100 Çevrimdışı · Uykuda Reklam Kesintisi Yok</span>
         </span>
 
+        <h1>
+          <span class="inline-en">Still Awake at 3 AM? Mask Night Noise Without Mid-Sleep Ad Blasts.</span>
+          <span class="inline-tr">Saat 03:00'te Hâlâ Uyuyamıyor musunuz? Dış Gürültüyü Çevrimdışı Maskeleyin.</span>
+        </h1>
+
         <div data-lang="en">
-          <h1>Still Awake at 3 AM? Mask Night Noise Without Mid-Sleep Ad Blasts.</h1>
           <p class="lead">
             Tired of 8-hour rain videos waking you up with sudden loud ads or buffering drops?
             Layer <strong>Rain, Fireplace, White, Pink &amp; Brown Noise</strong> with independent sliders,
@@ -337,7 +371,6 @@
         </div>
 
         <div data-lang="tr">
-          <h1>Saat 03:00'te Hâlâ Uyuyamıyor musunuz? Dış Gürültüyü Çevrimdışı Maskeleyin.</h1>
           <p class="lead">
             Tam uykuya dalmışken video platformlarında patlayan yüksek sesli reklamlardan veya kopan yayınlardan bıktınız mı?
             <strong>Yağmur, Şömine, Beyaz, Pembe ve Kahverengi Gürültüyü</strong> ayrı sürgülerle karıştırın;
@@ -428,6 +461,101 @@
       </div>
     </section>
 
+    <section class="compare" aria-label="Comparison">
+      <div data-lang="en">
+        <h2>Sleepy Mixer vs. Common Alternatives</h2>
+        <p class="sub">Built to solve the two biggest reasons people wake up at 3 AM: mid-roll streaming ads and Wi-Fi dropouts.</p>
+        <table class="cmp">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Sleepy Mixer</th>
+              <th>10-Hour YouTube Loops</th>
+              <th>Subscription Sleep Apps</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Offline / Airplane Mode</td>
+              <td class="me">100% bundled offline</td>
+              <td>Requires internet / Premium</td>
+              <td>Often requires download/sub</td>
+            </tr>
+            <tr>
+              <td>Mid-Sleep Ad Interruptions</td>
+              <td class="me">Zero sleep-time ads</td>
+              <td>Mid-roll audio/video ads</td>
+              <td>Paywall or prompts</td>
+            </tr>
+            <tr>
+              <td>Pricing Model</td>
+              <td class="me">Free core + optional one-time unlock</td>
+              <td>Ad-supported or monthly sub</td>
+              <td>Weekly / yearly subscription</td>
+            </tr>
+            <tr>
+              <td>Sleep Fade-Out Timer</td>
+              <td class="me">2-minute gradual fade-out</td>
+              <td>Abrupt stop at video end</td>
+              <td>Timer included in paid tiers</td>
+            </tr>
+            <tr>
+              <td>Custom Layer Mixing</td>
+              <td class="me">Independent channel sliders</td>
+              <td>Single fixed video track</td>
+              <td>Gated behind recurring tier</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div data-lang="tr">
+        <h2>Sleepy Mixer ve Alternatiflerin Karşılaştırması</h2>
+        <p class="sub">İnsanları gece 03:00'te uyandıran iki ana sorunu çözmek için tasarlandı: yayın içi sesli reklamlar ve internet kopmaları.</p>
+        <table class="cmp">
+          <thead>
+            <tr>
+              <th>Özellik</th>
+              <th>Sleepy Mixer</th>
+              <th>10 Saatlik YouTube Videoları</th>
+              <th>Abonelikli Uyku Uygulamaları</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Uçak Modu / Çevrimdışı</td>
+              <td class="me">%100 cihaz içi çevrimdışı</td>
+              <td>İnternet veya Premium gerekir</td>
+              <td>Çoğunlukla abonelik gerekir</td>
+            </tr>
+            <tr>
+              <td>Uyku Sırasında Reklam</td>
+              <td class="me">Sıfır uyku reklam kesintisi</td>
+              <td>Yayın ortası yüksek sesli reklam</td>
+              <td>Sürekli yükseltme/abonelik uyarısı</td>
+            </tr>
+            <tr>
+              <td>Fiyatlandırma Modeli</td>
+              <td class="me">Ücretsiz temel + tek seferlik açılış</td>
+              <td>Reklamlı veya aylık abonelik</td>
+              <td>Haftalık / yıllık tekrarlayan abonelik</td>
+            </tr>
+            <tr>
+              <td>Uyku Zamanlayıcısı</td>
+              <td class="me">2 dakikalık kademeli kısma</td>
+              <td>Video sonunda aniden durur</td>
+              <td>Çoğunlukla ücretli pakette</td>
+            </tr>
+            <tr>
+              <td>Çoklu Ses Karıştırma</td>
+              <td class="me">Her ses için bağımsız sürgü</td>
+              <td>Tek sabit ses parçası</td>
+              <td>Ücretli abonelik arkasında</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <section class="faq">
       <div data-lang="en"><h2>Frequently Asked Questions</h2></div>
       <div data-lang="tr"><h2>Sık Sorulan Sorular</h2></div>
@@ -444,6 +572,10 @@
         <h3>Is there a weekly subscription?</h3>
         <p>No. Core sleep sounds are free to use, and unlocking Pink/Brown Noise and 5-channel mixes is a single optional one-time upgrade.</p>
       </div>
+      <div class="faq-item" data-lang="en">
+        <h3>How does Sleepy Mixer compare to 10-hour YouTube rain videos or subscription sleep apps?</h3>
+        <p>Unlike YouTube loops, Sleepy Mixer runs 100% offline in Airplane Mode without mid-sleep video/audio ads or buffering dropouts, includes a 2-minute gradual fade-out timer, and replaces recurring weekly or monthly fees with an optional one-time lifetime unlock.</p>
+      </div>
 
       <div class="faq-item" data-lang="tr">
         <h3>Uçak modunda internet kapalıyken gerçekten çalışır mı?</h3>
@@ -457,6 +589,10 @@
         <h3>Haftalık veya aylık zorunlu abonelik var mı?</h3>
         <p>Hayır. Temel mikser ücretsizdir; Pembe Gürültü, Kahverengi Gürültü ve 5 kanallı miks için yalnızca isteğe bağlı tek seferlik kalıcı açılış sunulur.</p>
       </div>
+      <div class="faq-item" data-lang="tr">
+        <h3>YouTube yağmur videoları ve abonelikli uyku uygulamalarından farkı nedir?</h3>
+        <p>YouTube videolarının aksine uçak modunda %100 çevrimdışı çalışır, uykuda araya reklam sokmaz, 2 dakikalık kademeli kapanma sunar ve tekrarlayan abonelik yerine isteğe bağlı tek seferlik kalıcı kilit açma modelini kullanır.</p>
+      </div>
     </section>
 
     <footer>
@@ -465,6 +601,8 @@
       </div>
       <div class="links">
         <a href="https://play.google.com/store/apps/details?id=com.rdbm.sleepymixer" target="_blank" rel="noopener">Google Play</a>
+        <a href="https://youtube.com/shorts/Rnnkcam1V6I" target="_blank" rel="noopener">18s Demo (YouTube)</a>
+        <a href="https://www.uneed.best/tool/sleepy-mixer-rain-sounds" target="_blank" rel="noopener">Uneed</a>
         <a href="https://docs.google.com/document/d/1smT8n2OU3JpPFjdJbkRGJ7csHKftpffYH7ll9wXw4Fw/edit?usp=sharing" target="_blank" rel="noopener">Privacy Policy</a>
         <a href="./llms.txt">llms.txt</a>
         <a href="https://github.com/RDByM" target="_blank" rel="noopener">GitHub (RDByM)</a>
