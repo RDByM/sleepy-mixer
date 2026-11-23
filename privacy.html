@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — Sleepy Mixer: Rain Sounds</title>
+  <meta name="description" content="Official Privacy Policy for Sleepy Mixer: Rain Sounds (com.rdbm.sleepymixer) by RDByM." />
+  <link rel="canonical" href="https://rdbym.github.io/sleepy-mixer/privacy.html" />
+  <style>
+    :root {
+      --bg: #0c121b;
+      --surface: #141e2b;
+      --border: #253447;
+      --text: #edf3f9;
+      --muted: #9eb1c4;
+      --accent: #d8ad79;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+    header {
+      margin-bottom: 28px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+    }
+    h1 { margin: 0 0 8px; font-size: 2rem; }
+    .meta { color: var(--muted); font-size: 0.95rem; }
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 22px;
+      margin-bottom: 16px;
+    }
+    h2 { margin: 0 0 10px; font-size: 1.15rem; color: var(--accent); }
+    p, li { color: #dbe6f2; }
+    ul { padding-left: 20px; margin: 8px 0 0; }
+    a { color: var(--accent); }
+    footer {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Privacy Policy for Sleepy Mixer</h1>
+      <div class="meta">
+        App: <strong>Sleepy Mixer: Rain Sounds</strong> (<code>com.rdbm.sleepymixer</code>) · Developer: <strong>RDByM</strong> · Last updated: <strong>November 23, 2026</strong>
+      </div>
+    </header>
+
+    <section>
+      <h2>1. Overview &amp; Local-First Design</h2>
+      <p>RDByM ("we", "us", or "our") provides <strong>Sleepy Mixer: Rain Sounds</strong> with a free, ad-supported core and an optional Google Play Premium subscription. We do not require user registration, login credentials, or personally identifiable account profiles.</p>
+      <p>Sleep session history, favorite sound mixes, and Rainy Cabin preferences are stored locally on your device. You can delete all local app data at any time via Android system settings or by uninstalling the app.</p>
+    </section>
+
+    <section>
+      <h2>2. Microphone Usage &amp; Audio Processing</h2>
+      <p>If you choose to enable the optional snoring monitor, Sleepy Mixer requests Android microphone permission strictly to estimate loud snore-like sound events locally in real time. No microphone audio is recorded, saved to disk, or transmitted to any server; audio samples are discarded immediately after level estimation.</p>
+    </section>
+
+    <section>
+      <h2>3. Advertising &amp; Privacy Consent</h2>
+      <p>The free tier uses <strong>Google AdMob</strong> and Google's User Messaging Platform (UMP) to manage regional ad consent choices. AdMob may process device identifiers (such as Advertising ID) according to your device and consent settings. Sleepy Mixer never interrupts active sleep audio playback with audio or video ads. You can revisit your ad consent choices from the Premium screen.</p>
+    </section>
+
+    <section>
+      <h2>4. Premium Subscriptions, Entitlements &amp; Server Verification</h2>
+      <p>Optional Premium subscriptions and previously unlocked one-time entitlements are billed exclusively through <strong>Google Play Billing</strong>. We never receive or store your payment card details.</p>
+      <ul>
+        <li>To verify active entitlements, enforce device limits, and grant monthly AI sound credits accurately across reinstalls or restores, the app sends your Google Play purchase token and a random app-generated installation identifier over HTTPS to our verification service.</li>
+        <li>The verification service validates the purchase status with the Google Play Developer API, stores only a one-way cryptographic hash (SHA-256) of the token and device identifier to prevent duplicate credit grants, and returns a signed Ed25519 receipt valid offline for up to 24 hours (capped at your billing period end).</li>
+        <li>Refunds, cancellations, and subscription management are handled through Google Play.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. AI Ambience Sound Generation</h2>
+      <p>When an entitled Premium subscriber manually requests AI ambience generation from a text description in the Cabin screen, only the submitted text prompt (3–400 characters) and the signed verification receipt are sent over HTTPS to our verification backend and audio generation provider to return the requested audio loop. Sleep history, microphone data, and personal contacts are never included.</p>
+    </section>
+
+    <section>
+      <h2>6. Optional Usage Analytics</h2>
+      <p>Optional Firebase usage analytics for Premium screen and purchase funnel events is <strong>disabled by default</strong>. If you explicitly opt in using the toggle in the Premium screen, basic event telemetry is sent to Google Firebase. Sleep records, microphone audio, and raw Google Play purchase tokens are never sent to analytics.</p>
+    </section>
+
+    <section>
+      <h2>7. Security &amp; Changes to This Policy</h2>
+      <p>All network requests for purchase verification and AI sound generation require HTTPS with redirects disabled and strict response validation. We may update this Privacy Policy as features evolve; any updates will be posted on this page with an updated revision date.</p>
+    </section>
+
+    <section>
+      <h2>8. Contact</h2>
+      <p>If you have questions about this Privacy Policy or your data, please reach out via the official <a href="https://play.google.com/store/apps/details?id=com.rdbm.sleepymixer" target="_blank" rel="noopener">Google Play Store listing for Sleepy Mixer</a> (Developer: RDByM).</p>
+    </section>
+
+    <footer>
+      <span>RDByM · Sleepy Mixer: Rain Sounds</span>
+      <span><a href="./">Back to Sleepy Mixer Home</a> · <a href="./llms.txt">llms.txt</a></span>
+    </footer>
+  </main>
+</body>
+</html>
