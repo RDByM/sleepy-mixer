@@ -25,7 +25,7 @@
 
 ## Sound Channels & Pricing
 - **Free Core:** Rain, Fireplace, and White Noise (mix up to 2 channels simultaneously, save up to 2 favorite presets, 100% offline playback).
-- **Optional Monthly Premium Subscription:** Unlocks Pink Noise, Brown Noise, up to 5 simultaneous channels, unlimited saved favorites, ad removal, and monthly AI ambience sound credits (billed via Google Play; cancel anytime). Previously purchased one-time entitlements remain protected.
+- **Optional Monthly Premium Subscription:** 7-day free trial (2 AI ambience credits during trial), then $4.99/month (USD; localized by country) via Google Play with 10 non-rolling AI ambience credits per paid period, plus Pink Noise, Brown Noise, up to 5 simultaneous channels, unlimited saved favorites, and ad removal (cancel anytime). Previously purchased one-time entitlements remain protected.
 
 ## Good For (Use Cases)
 - Falling asleep faster with consistent low-frequency masking
